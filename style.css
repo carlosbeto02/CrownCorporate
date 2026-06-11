@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+    --cor-branco: rgba(255, 255, 255, 0.8)
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: "Poppins";
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+}
+
+.capa {
+    color: var(--cor-branco);
+    
+    background-image: url("assets/paginaInicial.png");
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-size: cover;
+
+    width: 100vw;
+    height: 100vh;
+
+    position: relative;
+}
+
+
+.logo img{
+    width: 36vw;
+    object-fit: cover;
+
+    position: absolute;
+    left: 65vw;
+    top: -3vw;
+}
+
+.conteudo{
+    position: absolute;
+    left: 8vw;
+    bottom: 4vh;
+}
+
+.capa h1{
+    font-family: "Poppins", sans-serif;
+    font-size: 7vw;
+    font-weight: 700;
+    line-height: 1.2;
+
+    margin-bottom: 2.5rem;
+
+    position: relative;
+    width: fit-content;
+}
+
+.capa p{
+    font-size: 3vw;
+}
+
+.capa p,h1{
+    text-transform: uppercase;
+}
+
+.capa .pTitulo{
+    font-weight: 700;
+}
+
+.titulo::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 0;
+    width: 32vw;
+    height: 1.4px;
+    background: var(--cor-branco);
+}
+
+.titulo::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 10vw;
+    height: 1.4px;
+    background: var(--cor-branco);
+}
+
+@media (min-width: 768px) {
+    .capa h1 {
+        font-size: 4vw;
+    }
+    .capa p{
+        font-size: 2vw;
+    }
+    .titulo::before {
+        width: 25vw;
+    }
+    .titulo::after {
+        width: 6vw;
+    }
+}
+
+@media (min-width: 1024px) {
+    body{
+        width: 100vw;
+        display: flex;
+        align-items: center;
+
+        position: relative;
+        
+    }
+
+    body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background-image: url("assets/paginaInicial.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    filter: brightness(0.5) blur(3px);
+    transform: scale(1.1);
+
+    z-index: -1;
+}
+    .capa{
+        background-position: center ;
+        width: 80vw;
+    }
+    .logo img{
+        left: 50vw;
+    }
+}
+
+@media (min-width: 1440px) {
+    .capa{
+        background-position: center -600px;
+    }
+
+}
+
+@media (min-width: 1600px) {
+    .capa{
+        background-position: center -900px;
+    }
+    .capa h1{
+        font-size: 3vw;
+    }
+    .capa p{
+        font-size: 1vw;
+    }
+        .titulo::before {
+        width: 18vw;
+    }
+    .titulo::after {
+        width: 5vw;
+    }
+}
