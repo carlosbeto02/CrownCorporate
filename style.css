@@ -9,39 +9,73 @@
 
 :root {
     font-size: 62.5%;
-    --cor-branco: rgba(255, 255, 255, 0.8)
+    --cor-branco: rgba(255, 255, 255, 0.8);
+    --cor-vermelho: rgba(234, 44, 44, 0.8);
+    --bg-color-branco: rgba(244, 243, 242, 1);
+    --bg-color-cinza:rgba(231, 231, 231, 1);
 }
 
 body {
     font-size: 1.6rem;
-    font-family: "Poppins";
+    font-family: "Poppins", sans-serif;
     display: flex;
     justify-content: center;
     width: 100vw;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background-image: url("assets/IMAGENS DO LAYOUT.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    filter: brightness(.5) blur(3px);
+    transform: scale(1.08);
+
+    z-index: -1;
+}
+
+main{
+    background-color: var(--bg-color-branco);
+    width: 70vw;
 }
 
 .capa {
     color: var(--cor-branco);
-    
-    background-image: url("assets/paginaInicial.png");
-    background-repeat: no-repeat;
-    background-position: center left;
-    background-size: cover;
+    overflow: hidden;
 
-    width: 100vw;
+    width: 70vw;
     height: 100vh;
 
     position: relative;
+
+    background-size: 100%;
+
 }
 
+.bg-capa {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    
+}
 
 .logo img{
-    width: 36vw;
+    width: 14vw;
     object-fit: cover;
 
     position: absolute;
-    left: 65vw;
-    top: -3vw;
+    left: 52vw;
+    top:4vh;
+
 }
 
 .conteudo{
@@ -52,7 +86,7 @@ body {
 
 .capa h1{
     font-family: "Poppins", sans-serif;
-    font-size: 7vw;
+    font-size: 3vw;
     font-weight: 700;
     line-height: 1.2;
 
@@ -63,7 +97,7 @@ body {
 }
 
 .capa p{
-    font-size: 3vw;
+    font-size: 1vw;
 }
 
 .capa p,h1{
@@ -79,7 +113,7 @@ body {
     position: absolute;
     top: -15px;
     left: 0;
-    width: 32vw;
+    width: 19vw;
     height: 1.4px;
     background: var(--cor-branco);
 }
@@ -94,7 +128,125 @@ body {
     background: var(--cor-branco);
 }
 
-@media (min-width: 768px) {
+.capa p{
+    color: var(--cor-vermelho);
+}
+
+.capa span{
+    color: var(--cor-branco);
+}
+
+.apresentacao{
+    position: relative;
+    padding-inline: 12%;
+}
+
+.apresentacao img{
+    width: 6.4rem;
+    margin-block: 2rem;
+
+    top: 2vh;
+    left: calc(50% - 200px);
+
+    position: absolute;
+
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+
+.cApresentacao{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+
+    padding-top: 20vh;
+}
+
+.cApresentacao h2{
+    font-weight: 500;
+    margin-bottom: 3rem;
+    font-size: 4rem;
+}
+
+.cApresentacao .nome_do_cliente{
+    color: var(--cor-vermelho);
+}
+
+.cApresentacao p:nth-child(2){
+    margin-bottom: 1.6rem;
+    padding-left: 0px;
+}
+
+.cApresentacao p{
+    font-size: 2.4rem;
+}
+
+.stroke{
+    font-weight: 700;
+    position: relative;
+    
+}
+
+.beneficios {
+    padding-left: 3.4rem;
+    font-size: 2.4rem;
+}
+
+.beneficios li::marker {
+    font-size: 2.4rem;
+    color: #000;
+}
+
+.no-dot{
+    list-style-type: none;
+}
+
+
+.qddCinza{
+    background-color: var(--bg-color-cinza);
+
+}
+
+.qddCinza{
+    margin-top: 2.4rem;
+    padding: 2.4rem;
+    border-left: 0.5rem black solid;
+}
+
+.qddCinza p{
+    padding-inline: .4rem;
+    font-size: 2.4rem;
+}
+
+h3{
+    font-size: 2.4rem;
+    color: #8D1B33;
+    margin-top: 3rem;
+}
+
+.comercial-team{
+    text-align: right;
+    font-size: 1.6rem;
+    margin-top: 2rem;
+    
+}
+
+.apresentacao::after{
+    content: "";
+    position: absolute;
+    width: 77%;
+    height: 2px;
+    background-color: rgba(128, 128, 128,0.1);
+    margin-top: 2rem;
+}
+
+.diferenciais{
+    height: 100vh;
+}
+
+/* responsividade desativada  */
+/* @media (min-width: 768px) {
     .capa h1 {
         font-size: 4vw;
     }
@@ -166,4 +318,4 @@ body {
     .titulo::after {
         width: 5vw;
     }
-}
+} */
